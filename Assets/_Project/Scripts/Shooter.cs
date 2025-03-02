@@ -73,7 +73,7 @@ public class Shooter : MonoBehaviourPun
 
         if (currentAmmo > 0)
         {
-            Instantiate(Bullet, FirePosition.transform.position, FirePosition.transform.rotation);
+            PhotonNetwork.Instantiate(Bullet.name, FirePosition.transform.position, FirePosition.transform.rotation);
             currentAmmo--;
         }
     }

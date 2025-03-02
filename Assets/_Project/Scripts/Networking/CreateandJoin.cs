@@ -10,6 +10,11 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
     public TMP_InputField input_Create;
     public TMP_InputField input_Join;
 
+    void Awake()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+    }
+
     public void SetNickname()
     {
         if (!string.IsNullOrEmpty(input_Nickname.text))

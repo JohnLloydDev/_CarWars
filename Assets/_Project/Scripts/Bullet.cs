@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Bullet : MonoBehaviour
+[RequireComponent(typeof(PhotonView))]
+public class Bullet : MonoBehaviourPun
 {
     public Rigidbody rb;
     public GameObject Hit;
@@ -12,14 +14,14 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb.AddForce(transform.forward * 2000);
-        GameObject A = Instantiate(Fire, this.transform.position, Quaternion.identity);
-        Destroy(A, 2);
+        GameObject fireEffect = Instantiate(Fire, this.transform.position, Quaternion.identity);
+        Destroy(fireEffect, 2);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        GameObject B = Instantiate(Hit, this.transform.position, Quaternion.identity);
-        Destroy(B, 2);
+        GameObject hitEffect = Instantiate(Hit, this.transform.position, Quaternion.identity);
+        Destroy(hitEffect, 2);
         Destroy(this.gameObject);
     }
 }
