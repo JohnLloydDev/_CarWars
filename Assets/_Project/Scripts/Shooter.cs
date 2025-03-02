@@ -84,8 +84,8 @@ public class Shooter : MonoBehaviourPun
             return;
 
         GUIStyle style = new GUIStyle();
-        style.font = customFont; // Apply custom font
-        style.fontSize = 48; // Bigger font size
+        style.font = customFont; 
+        style.fontSize = 48; 
         style.fontStyle = FontStyle.Bold;
 
         float iconSize = 50;

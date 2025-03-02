@@ -7,6 +7,8 @@ TagManager:
   - Undefined
   - PlayerCar
   - Car
+  - Bullet
+  - UIHealthBar
   layers:
   - Default
   - TransparentFX

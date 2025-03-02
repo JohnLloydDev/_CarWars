@@ -1,8 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -11,11 +10,14 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     public TMP_Text RoomNameText;
     public Transform PlayerListContent;
     public GameObject PlayerListItemPrefab;
+    public GameObject startButton;
 
     void Start()
     {
         RoomNameText.text = PhotonNetwork.CurrentRoom.Name;
         UpdatePlayerList();
+
+        startButton.SetActive(PhotonNetwork.IsMasterClient);
     }
 
     void UpdatePlayerList()
@@ -36,11 +38,13 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         UpdatePlayerList();
+        CheckMasterClient();
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         UpdatePlayerList();
+        CheckMasterClient();
     }
 
     public void LeaveRoom()
@@ -59,5 +63,11 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LoadLevel("SampleScene");
         }
+    }
+
+    // 🔹 Check if the player is the new Master Client when someone leaves
+    void CheckMasterClient()
+    {
+        startButton.SetActive(PhotonNetwork.IsMasterClient);
     }
 }

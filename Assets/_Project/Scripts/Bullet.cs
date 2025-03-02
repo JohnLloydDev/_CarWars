@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviourPun
     public GameObject Hit;
     public GameObject Fire;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb.AddForce(transform.forward * 2000);
@@ -20,8 +19,18 @@ public class Bullet : MonoBehaviourPun
 
     private void OnCollisionEnter(Collision other)
     {
-        GameObject hitEffect = Instantiate(Hit, this.transform.position, Quaternion.identity);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null && other.gameObject.GetComponent<PhotonView>().IsMine)
+            {
+                other.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, 10);
+            }
+        }
+
+        GameObject hitEffect = Instantiate(Hit, transform.position, Quaternion.identity);
         Destroy(hitEffect, 2);
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

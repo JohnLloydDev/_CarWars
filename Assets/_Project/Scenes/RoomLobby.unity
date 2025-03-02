@@ -1041,6 +1041,7 @@ MonoBehaviour:
   RoomNameText: {fileID: 1299539999}
   PlayerListContent: {fileID: 60177376}
   PlayerListItemPrefab: {fileID: 5485107329091838789, guid: 0d13c08b490feb14ea9c58f927f3b152, type: 3}
+  startButton: {fileID: 133675966}
 --- !u!1 &2030648229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1361,22 @@ PrefabInstance:
     - target: {fileID: 5485107329091838789, guid: 0d13c08b490feb14ea9c58f927f3b152, type: 3}
       propertyPath: m_Name
       value: PlayerListContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049260602503287226, guid: 0d13c08b490feb14ea9c58f927f3b152, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049260602503287226, guid: 0d13c08b490feb14ea9c58f927f3b152, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049260602503287226, guid: 0d13c08b490feb14ea9c58f927f3b152, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049260602503287226, guid: 0d13c08b490feb14ea9c58f927f3b152, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
