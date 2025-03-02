@@ -123,8 +123,8 @@ MonoBehaviour:
   accelerationMultiplier: 6
   maxSteeringAngle: 40
   steeringSpeed: 0.5
-  brakeForce: 450
-  decelerationMultiplier: 2
+  brakeForce: 600
+  decelerationMultiplier: 5
   handbrakeDriftMultiplier: 5
   bodyMassCenter: {x: 0, y: 0, z: 0}
   frontLeftMesh: {fileID: 8649133034589738184}

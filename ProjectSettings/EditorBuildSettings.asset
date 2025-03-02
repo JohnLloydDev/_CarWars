@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Arena.unity
     guid: d5392011283145a4db6ff2730a6a8f79
+  - enabled: 1
+    path: Assets/_Project/Scenes/RoomLobby.unity
+    guid: df0c5db5bb8deed49a850dbc4cd85e7f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
