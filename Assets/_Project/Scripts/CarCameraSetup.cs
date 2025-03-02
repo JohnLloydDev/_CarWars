@@ -6,20 +6,19 @@ public class CarCameraSetup : MonoBehaviourPun
 {
     private void Start()
     {
-        // Ensure this script runs only for the local player
         if (photonView.IsMine)
         {
-            CinemachineCamera cam = FindObjectOfType<CinemachineCamera>();
+            CinemachineCamera cam = Object.FindFirstObjectByType<CinemachineCamera>();
 
             if (cam != null)
             {
                 cam.Follow = transform;
                 cam.LookAt = transform;
-                Debug.Log("Camera set to follow local player.");
+                Debug.Log("Chase camera set up for local player.");
             }
             else
             {
-                Debug.LogError("No CinemachineCamera found in scene!");
+                Debug.LogError("No CinemachineCamera found in the scene!");
             }
         }
     }

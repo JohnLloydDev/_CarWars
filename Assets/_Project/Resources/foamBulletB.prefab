@@ -123,4 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c680461aa442f439e686c71decba29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  rb: {fileID: -1035428344269963836}
+  Hit: {fileID: 1336949550903370, guid: 4543ab5e3d405ec40a8d4e9aa5165030, type: 3}
+  Fire: {fileID: 162584487599433031, guid: 39f852c28f9c3fd45a427c24f3564ba7, type: 3}

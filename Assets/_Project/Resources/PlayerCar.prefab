@@ -51,6 +51,8 @@ GameObject:
   - component: {fileID: 6971220776836758505}
   - component: {fileID: 5911899462219136367}
   - component: {fileID: 4500374992209696618}
+  - component: {fileID: 5181715344489144688}
+  - component: {fileID: 8009613073039660792}
   m_Layer: 0
   m_Name: PlayerCar
   m_TagString: Car
@@ -74,7 +76,6 @@ Transform:
   - {fileID: 4466888475822015697}
   - {fileID: 6399581921715410368}
   - {fileID: 901333272}
-  - {fileID: 4620885303484728758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5135156708204615449
@@ -120,7 +121,7 @@ MonoBehaviour:
   maxSpeed: 120
   maxReverseSpeed: 45
   accelerationMultiplier: 6
-  maxSteeringAngle: 35
+  maxSteeringAngle: 40
   steeringSpeed: 0.5
   brakeForce: 450
   decelerationMultiplier: 2
@@ -232,6 +233,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802a81a3ac89c594c8486fcce919270c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5181715344489144688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642287924342879162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4903882a110dcf2458a94e25dd3f6608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 3047728020816763945, guid: 15ddf39c22a065f408c8858c8bf3cb1a, type: 3}
+  FirePosition: {fileID: 3809361843129958301}
+  maxAmmo: 30
+  reloadTime: 2
+  ammoIcon: {fileID: 0}
+  customFont: {fileID: 0}
+  autoFire: 1
+--- !u!114 &8009613073039660792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642287924342879162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434fe8ea399a5844fbd439323693d56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 10
 --- !u!1 &934883528070179459
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,12 +830,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3809361843129958301}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7019241, y: 0.9538731, z: 0.8598313}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.0024, y: 0.096, z: -1.08}
+  m_LocalScale: {x: 0.49999997, y: 0.49999997, z: 0.49999997}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 261786959625234688}
+  m_Father: {fileID: 171649305293495116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6204759407096980703
 GameObject:
@@ -1556,7 +1589,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: fec5fb18b3213074e9792782a90e03eb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4620885303484728758}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fec5fb18b3213074e9792782a90e03eb, type: 3}
 --- !u!4 &171649305293495116 stripped

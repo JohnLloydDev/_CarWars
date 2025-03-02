@@ -1,20 +1,25 @@
-using Photon.Pun;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 20;
+    public Rigidbody rb;
+    public GameObject Hit;
+    public GameObject Fire;
 
-    private void OnTriggerEnter(Collider other)
-{
-    Debug.Log("Bullet Hit: " + other.gameObject.name); // 🔹 Debug Message
-    
-    if (other.CompareTag("Car"))  // Make sure Car has the "Car" tag!
+    // Start is called before the first frame update
+    void Start()
     {
-        Debug.Log("Car was hit!");
-        other.GetComponent<PhotonView>().RPC("RPC_TakeDamage", RpcTarget.All, 10);
-        Destroy(gameObject);  // Destroy bullet on impact
+        rb.AddForce(transform.forward * 2000);
+        GameObject A = Instantiate(Fire, this.transform.position, Quaternion.identity);
+        Destroy(A, 2);
     }
-}
 
+    private void OnCollisionEnter(Collision other)
+    {
+        GameObject B = Instantiate(Hit, this.transform.position, Quaternion.identity);
+        Destroy(B, 2);
+        Destroy(this.gameObject);
+    }
 }
