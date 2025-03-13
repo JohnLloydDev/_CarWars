@@ -43,6 +43,11 @@ MonoBehaviour:
   - RPC_TakeDamage
   - SetNickname
   - TakeDamage
+  - AddScore
+  - AddScoreRPC
+  - SyncScore
+  - UpdatePlayerListRPC
+  - DeclareWinner
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

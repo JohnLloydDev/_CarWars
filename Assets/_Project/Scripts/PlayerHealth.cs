@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using System.Collections;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviourPun, IPunObservable
 {
     public int maxHealth = 100;
     private int currentHealth;
-    private Slider uiHealthBar;  // This will be assigned dynamically
+    private Slider uiHealthBar;
 
     void Start()
     {
@@ -21,20 +23,15 @@ public class PlayerHealth : MonoBehaviourPun, IPunObservable
                 uiHealthBar.maxValue = maxHealth;
                 uiHealthBar.value = currentHealth;
             }
-            else
-            {
-                Debug.LogError("❌ UI Health Bar not found in CanvasManager!");
-            }
         }
     }
 
     [PunRPC]
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, int attackerId)
     {
         if (!photonView.IsMine) return;
 
         currentHealth -= damage;
-
         if (uiHealthBar != null)
         {
             uiHealthBar.value = currentHealth;
@@ -42,18 +39,22 @@ public class PlayerHealth : MonoBehaviourPun, IPunObservable
 
         if (currentHealth <= 0)
         {
-            Die();
+            Die(attackerId); // ✅ Fixed: Call Die() instead of a missing coroutine
         }
     }
 
-    void Die()
+    private void Die(int attackerId)
     {
-        if (photonView.IsMine)
+        if (ScoreManager.Instance != null)
         {
-            PhotonNetwork.Destroy(gameObject);
+            ScoreManager.Instance.photonView.RPC("AddScoreRPC", RpcTarget.All, attackerId, 1);
         }
+
+        PlayerSpawner.Instance.StartRespawnCountdown();
+        PhotonNetwork.Destroy(gameObject);
     }
 
+    // ✅ Fix: Properly place the OnPhotonSerializeView method inside the class
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)

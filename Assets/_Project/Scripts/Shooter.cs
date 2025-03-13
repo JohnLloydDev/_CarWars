@@ -46,13 +46,12 @@ public class Shooter : MonoBehaviourPun
             StartCoroutine(Reload());
             return;
         }
-
-        if (autoFire && Input.GetMouseButton(0) && Time.time >= nextFireTime)
+        if (autoFire && Input.GetKey(KeyCode.L) && Time.time >= nextFireTime)  // Auto fire with L key
         {
             nextFireTime = Time.time + fireRate;
             Shooting();
         }
-        else if (!autoFire && Input.GetMouseButtonDown(0))
+        else if (!autoFire && Input.GetKeyDown(KeyCode.L))  // Single fire with L key
         {
             Shooting();
         }

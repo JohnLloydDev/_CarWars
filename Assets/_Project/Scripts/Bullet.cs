@@ -23,9 +23,16 @@ public class Bullet : MonoBehaviourPun
         {
             PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
 
-            if (playerHealth != null && other.gameObject.GetComponent<PhotonView>().IsMine)
+            if (playerHealth != null)
             {
-                other.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, 10);
+                PhotonView targetPhotonView = other.gameObject.GetComponent<PhotonView>();
+
+                if (targetPhotonView != null)
+                {
+                    int shooterId = photonView.Owner.ActorNumber; // Get the shooter's ActorNumber
+
+                    targetPhotonView.RPC("TakeDamage", RpcTarget.AllBuffered, 10, shooterId);
+                }
             }
         }
 

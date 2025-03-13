@@ -105,5 +105,6 @@ AssetOrigin:
   productId: 161085
   packageName: 'ARCADE: FREE Racing Car'
   packageVersion: 3.0
-  assetPath: Assets/ARCADE - FREE Racing Car/Meshes/ARCADE - FREE Racing Car.fbx
+  assetPath: Assets/_Project/Resources/ARCADE - FREE Racing Car/Meshes/ARCADE - FREE
+    Racing Car.fbx
   uploadId: 494158
