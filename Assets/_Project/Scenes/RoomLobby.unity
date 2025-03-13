@@ -1354,8 +1354,8 @@ MonoBehaviour:
   characterSelectionPanel: {fileID: 1044300401}
   characterButtonPrefab: {fileID: 4132171961876274415, guid: 08858fb8bed1b604288abf1061458db6, type: 3}
   characterPrefabs:
-  - {fileID: 642287924342879162, guid: 1874ee3bf14cc0d42a30e9d64f1082f7, type: 3}
-  - {fileID: 2067201934056403537, guid: e463a6f336b97094a9a1793b55cce428, type: 3}
+  - {fileID: 1208694192575790341, guid: 5fdb4208fe3839d489b8641dc8da7e6e, type: 3}
+  - {fileID: 1208694192575790341, guid: 7028de7398a613647b1af7c6be896531, type: 3}
 --- !u!114 &1776889718
 MonoBehaviour:
   m_ObjectHideFlags: 0

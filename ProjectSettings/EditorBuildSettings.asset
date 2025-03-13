@@ -6,44 +6,31 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Project/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/_Project/Scenes/Game.unity
-    guid: ec1f49b5cc66ffd429dcad4154e7b5b0
-  - enabled: 0
-    path: Assets/_Project/Scenes/LobbyScenes/Lobby.unity
-    guid: cdb247b5202161a4d9c7185fbbdddcf7
-  - enabled: 0
-    path: Assets/_Project/Scenes/Register.unity
-    guid: 6a354b97a95c18a4aabad5850ca1b249
-  - enabled: 1
     path: Assets/_Project/Scenes/Loading.unity
     guid: 8f730075a7bddd04cafb60d8c21f3caf
   - enabled: 1
-    path: Assets/_Project/Scenes/Main Menu.unity
-    guid: b109b3429bedb824ea0e55f2fe5de9b5
+    path: Assets/_Project/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/_Project/Scenes/CreateAndJoin.unity
     guid: e8e068da11dd6474491fa240fad5fad6
   - enabled: 1
-    path: Assets/_Project/Scenes/MainMenuScenes/How To Play.unity
-    guid: 997945a2b36659d49a6d1124c655ab18
+    path: Assets/_Project/Scenes/GameResult.unity
+    guid: d36dbaa8a13b2b04db60d5ee877b4e21
   - enabled: 1
-    path: Assets/_Project/Scenes/MainMenuScenes/Settings.unity
-    guid: 1ab4a846ea9fa1c40885668d8f84da24
+    path: Assets/_Project/Scenes/Main Menu.unity
+    guid: b109b3429bedb824ea0e55f2fe5de9b5
   - enabled: 1
-    path: Assets/_Project/Scenes/Arena.unity
-    guid: d5392011283145a4db6ff2730a6a8f79
+    path: Assets/_Project/Scenes/New Map.unity
+    guid: 9cae18b9cc442f94b8951902728ed95f
+  - enabled: 1
+    path: Assets/_Project/Scenes/Register.unity
+    guid: 6a354b97a95c18a4aabad5850ca1b249
   - enabled: 1
     path: Assets/_Project/Scenes/RoomLobby.unity
     guid: df0c5db5bb8deed49a850dbc4cd85e7f
   - enabled: 1
-    path: Assets/Map/Map 1.unity
-    guid: 95f6695cf5b62d446a9c402a8dcc3138
-  - enabled: 1
-    path: Assets/_Project/Scenes/GameResult.unity
-    guid: d36dbaa8a13b2b04db60d5ee877b4e21
-  m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    path: Assets/_Project/Scenes/Neon_Map_11.unity
+    guid: 6080843d2568e4a45bd9c7218c024717
+  m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

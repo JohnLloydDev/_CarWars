@@ -11,6 +11,8 @@ public class CarController : MonoBehaviourPun
     private float moveInput;
     private float turnInput;
 
+    public float AccelInput { get; internal set; }
+
     void Start()
     {
         if (!photonView.IsMine)   // Disable controls for other players' cars

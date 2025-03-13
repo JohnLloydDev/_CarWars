@@ -141,7 +141,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.LoadLevel("SampleScene");
+            PhotonNetwork.LoadLevel("Neon_Map_11");
         }
     }
 
