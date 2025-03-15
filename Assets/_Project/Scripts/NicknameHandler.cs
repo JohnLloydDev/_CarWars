@@ -24,11 +24,11 @@ public class NicknameHandler : MonoBehaviourPun
 
     void Update()
     {
-        Camera activeCamera = Camera.main; // Default to Unity's Main Camera
+        Camera activeCamera = Camera.main;
 
         if (activeCamera == null)
         {
-            CinemachineBrain brain = FindFirstObjectByType<CinemachineBrain>(); // Updated method
+            CinemachineBrain brain = FindFirstObjectByType<CinemachineBrain>();
             if (brain != null)
             {
                 activeCamera = brain.OutputCamera;

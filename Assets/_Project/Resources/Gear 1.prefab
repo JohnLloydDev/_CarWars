@@ -1814,13 +1814,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4903882a110dcf2458a94e25dd3f6608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 3047728020816763945, guid: 15ddf39c22a065f408c8858c8bf3cb1a, type: 3}
+  Bullet: {fileID: 6753385095266234120, guid: 9668b30d52f1c134daa39de07a490f33, type: 3}
   FirePosition: {fileID: 4011821533559452569}
-  maxAmmo: 30
-  reloadTime: 2
+  maxAmmo: 5
+  reloadTime: 3
   ammoIcon: {fileID: 0}
   customFont: {fileID: 0}
-  autoFire: 0
+  autoFire: 1
+  fireRate: 1.5
 --- !u!114 &1823798210517170118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3973,8 +3974,80 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4aa9a1cfcf4ae1479aadf4392cfa95c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6239055292280688770}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4aa9a1cfcf4ae1479aadf4392cfa95c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8366066505722390336}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4aa9a1cfcf4ae1479aadf4392cfa95c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4763125318683799476}
   m_SourcePrefab: {fileID: 100100000, guid: b4aa9a1cfcf4ae1479aadf4392cfa95c, type: 3}
+--- !u!1 &178639687243152130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b4aa9a1cfcf4ae1479aadf4392cfa95c, type: 3}
+  m_PrefabInstance: {fileID: 1061668674033092179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &6239055292280688770
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178639687243152130}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -177871702454287007, guid: b4aa9a1cfcf4ae1479aadf4392cfa95c, type: 3}
+--- !u!114 &8366066505722390336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178639687243152130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &4763125318683799476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178639687243152130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f285fb80a98624180df3bfb899a18a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 20
+  hitCooldown: 1
 --- !u!4 &662441967922864568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b4aa9a1cfcf4ae1479aadf4392cfa95c, type: 3}
@@ -4032,8 +4105,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5581407059300009746, guid: 2630030325f86a440a4a328a55b51b03, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3691128860791212586, guid: 2630030325f86a440a4a328a55b51b03, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1488438655920609813, guid: 2630030325f86a440a4a328a55b51b03, type: 3}
       insertIndex: -1

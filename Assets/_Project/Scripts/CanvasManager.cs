@@ -5,7 +5,7 @@ using System.Collections;
 
 public class CanvasManager : MonoBehaviour
 {
-    public static CanvasManager Instance { get; private set; } // Singleton with encapsulation
+    public static CanvasManager Instance { get; private set; }
     public Slider playerHealthBar;
     public TextMeshProUGUI respawnText;
 
@@ -13,7 +13,7 @@ public class CanvasManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); // Destroy duplicate instance
+            Destroy(gameObject); 
             return;
         }
 
@@ -22,7 +22,7 @@ public class CanvasManager : MonoBehaviour
 
     public void StartRespawnCoroutine()
     {
-        if (gameObject.activeInHierarchy) // ✅ Prevent coroutine errors if Canvas is inactive
+        if (gameObject.activeInHierarchy)
         {
             StartCoroutine(RespawnCountdown());
         }
@@ -43,7 +43,7 @@ public class CanvasManager : MonoBehaviour
             respawnText.gameObject.SetActive(false);
         }
 
-        if (PlayerSpawner.Instance != null) // ✅ Prevent null reference error
+        if (PlayerSpawner.Instance != null) 
         {
             PlayerSpawner.Instance.SpawnPlayer();
         }

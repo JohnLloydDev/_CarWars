@@ -10,12 +10,28 @@ public class Bullet : MonoBehaviourPun
     public GameObject Hit;
     public GameObject Fire;
 
+    public float damage = 10f; 
+    public float range = 100f; 
+
     void Start()
     {
-        rb.AddForce(transform.forward * 2000);
-        GameObject fireEffect = Instantiate(Fire, this.transform.position, Quaternion.identity);
+        Rigidbody carRb = transform.root.GetComponent<Rigidbody>(); 
+
+        if (carRb != null)
+        {
+            rb.linearVelocity = (transform.forward * 50f) + carRb.linearVelocity;
+        }
+        else
+        {
+            rb.linearVelocity = transform.forward * 50f;
+        }
+
+        GameObject fireEffect = Instantiate(Fire, transform.position, Quaternion.identity);
         Destroy(fireEffect, 2);
+
+        Destroy(gameObject, range / 100f);
     }
+
 
     private void OnCollisionEnter(Collision other)
     {
@@ -29,9 +45,9 @@ public class Bullet : MonoBehaviourPun
 
                 if (targetPhotonView != null)
                 {
-                    int shooterId = photonView.Owner.ActorNumber; // Get the shooter's ActorNumber
+                    int shooterId = photonView.Owner.ActorNumber;
 
-                    targetPhotonView.RPC("TakeDamage", RpcTarget.AllBuffered, 10, shooterId);
+                    targetPhotonView.RPC("TakeDamage", RpcTarget.AllBuffered, damage, shooterId);
                 }
             }
         }

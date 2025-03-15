@@ -12,11 +12,11 @@ public class Shooter : MonoBehaviourPun
     public float reloadTime = 2f;
     private bool isReloading = false;
 
-    public Texture2D ammoIcon; // Ammo icon texture
-    public Font customFont; // Custom font
+    public Texture2D ammoIcon;
+    public Font customFont;
 
     public bool autoFire = false;
-    private float fireRate = 0.1f; // Rate of automatic fire
+    public float fireRate = 0.1f; 
     private float nextFireTime = 0f;
 
     void Start()
@@ -46,12 +46,12 @@ public class Shooter : MonoBehaviourPun
             StartCoroutine(Reload());
             return;
         }
-        if (autoFire && Input.GetKey(KeyCode.L) && Time.time >= nextFireTime)  // Auto fire with L key
+        if (autoFire && Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + fireRate;
             Shooting();
         }
-        else if (!autoFire && Input.GetKeyDown(KeyCode.L))  // Single fire with L key
+        else if (!autoFire && Input.GetMouseButtonDown(0))
         {
             Shooting();
         }
@@ -87,7 +87,7 @@ public class Shooter : MonoBehaviourPun
         style.fontSize = 48; 
         style.fontStyle = FontStyle.Bold;
 
-        float iconSize = 50;
+        float iconSize = 100;
 
         if (ammoIcon != null)
         {

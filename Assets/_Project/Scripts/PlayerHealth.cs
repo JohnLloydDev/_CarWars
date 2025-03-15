@@ -27,11 +27,11 @@ public class PlayerHealth : MonoBehaviourPun, IPunObservable
     }
 
     [PunRPC]
-    public void TakeDamage(int damage, int attackerId)
+    public void TakeDamage(float damage, int attackerId)
     {
         if (!photonView.IsMine) return;
 
-        currentHealth -= damage;
+        currentHealth -= Mathf.RoundToInt(damage);
         if (uiHealthBar != null)
         {
             uiHealthBar.value = currentHealth;
@@ -39,9 +39,10 @@ public class PlayerHealth : MonoBehaviourPun, IPunObservable
 
         if (currentHealth <= 0)
         {
-            Die(attackerId); // ✅ Fixed: Call Die() instead of a missing coroutine
+            Die(attackerId);
         }
     }
+
 
     private void Die(int attackerId)
     {

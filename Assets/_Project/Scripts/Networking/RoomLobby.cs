@@ -14,9 +14,9 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     public GameObject PlayerListItemPrefab;
     public GameObject startButton;
 
-    public Transform characterSelectionPanel;  // Parent for buttons
-    public GameObject characterButtonPrefab;  // Button template
-    public List<GameObject> characterPrefabs; // List of character prefabs
+    public Transform characterSelectionPanel;  
+    public GameObject characterButtonPrefab;  
+    public List<GameObject> characterPrefabs; 
 
     private GameObject currentPreview;
     void Start()
@@ -37,7 +37,6 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         RoomNameText.text = PhotonNetwork.CurrentRoom.Name;
         PopulateCharacterSelection();
 
-        // Ensure only the Master Client calls this first, others will sync automatically
         if (PhotonNetwork.IsMasterClient)
         {
             photonView.RPC("UpdatePlayerListRPC", RpcTarget.AllBuffered);
@@ -94,27 +93,28 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         if (characterPrefab != null)
         {
             currentPreview = Instantiate(characterPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-            // Disable gravity on the Rigidbody if it exists
-            Rigidbody rb = currentPreview.GetComponent<Rigidbody>();
+
+            Transform modelTransform = currentPreview.transform.GetChild(0); 
+
+            Rigidbody rb = modelTransform.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.useGravity = false;
-                rb.isKinematic = true; // Stops other physics interactions
+                rb.isKinematic = true;
             }
+
+            currentPreview.transform.position = new Vector3(3, 1.5f, 0);
+            modelTransform.localScale = new Vector3(1f, 1f, 1f); 
+
+            modelTransform.rotation = Quaternion.Euler(0, 170, 0);
         }
-        currentPreview.transform.position = new Vector3(4, -0.09f, 0); // X, Y, Z - tweak this as needed
-
-        // Adjust scale (size)
-        currentPreview.transform.localScale = new Vector3(1f, 1f, 1f); // Smaller size
-
-        // Optional: Adjust rotation if needed
-        currentPreview.transform.rotation = Quaternion.Euler(0, 180, 0); // Rotates the model
 
         Hashtable playerProperties = new Hashtable { { "character", characterName } };
         PhotonNetwork.LocalPlayer.SetCustomProperties(playerProperties);
 
         photonView.RPC("UpdatePlayerListRPC", RpcTarget.AllBuffered);
     }
+
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         photonView.RPC("UpdatePlayerListRPC", RpcTarget.AllBuffered);
