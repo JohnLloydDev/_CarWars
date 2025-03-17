@@ -1193,7 +1193,7 @@ MonoBehaviour:
   forwardVector: {fileID: 2169976802716912253}
   forwardSpeed: 5000
   backwardsSpeed: 2000
-  maxSpeed: 25
+  maxSpeed: 30
   forwardForceMode: 5
   turnType: 0
   canAirTurn: 1
