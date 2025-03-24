@@ -19,13 +19,11 @@ public class RespawnManager : MonoBehaviour
 
     private IEnumerator RespawnCoroutine(int seconds, PlayerHealth player)
     {
-        // ✅ Show Respawn UI
         if (CanvasManager.Instance != null && CanvasManager.Instance.respawnText != null)
         {
             CanvasManager.Instance.respawnText.gameObject.SetActive(true);
         }
 
-        // Countdown
         for (int i = seconds; i > 0; i--)
         {
             if (CanvasManager.Instance != null && CanvasManager.Instance.respawnText != null)
@@ -35,13 +33,11 @@ public class RespawnManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        // Hide UI after countdown
         if (CanvasManager.Instance != null && CanvasManager.Instance.respawnText != null)
         {
             CanvasManager.Instance.respawnText.gameObject.SetActive(false);
         }
 
-        // ✅ Respawn Player
         if (PlayerSpawner.Instance != null)
         {
             PlayerSpawner.Instance.SpawnPlayer();

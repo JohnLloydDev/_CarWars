@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviourPun, IPunObservable
     public int maxHealth = 100;
     private int currentHealth;
     private Slider uiHealthBar;
+    [SerializeField] private GameObject deathParticlesPrefab; 
+
 
     void Start()
     {
@@ -29,9 +31,12 @@ public class PlayerHealth : MonoBehaviourPun, IPunObservable
     [PunRPC]
     public void TakeDamage(float damage, int attackerId)
     {
-        if (!photonView.IsMine) return;
+        if (!photonView || !photonView.IsMine) return;
+
+        if (currentHealth <= 0) return;  
 
         currentHealth -= Mathf.RoundToInt(damage);
+
         if (uiHealthBar != null)
         {
             uiHealthBar.value = currentHealth;
@@ -44,18 +49,35 @@ public class PlayerHealth : MonoBehaviourPun, IPunObservable
     }
 
 
+
     private void Die(int attackerId)
     {
+        if (deathParticlesPrefab != null)
+        {
+            GameObject deathEffect = PhotonNetwork.Instantiate(deathParticlesPrefab.name, transform.position, Quaternion.identity);
+            Destroy(deathEffect, 2f);
+        }
+
         if (ScoreManager.Instance != null)
         {
             ScoreManager.Instance.photonView.RPC("AddScoreRPC", RpcTarget.All, attackerId, 1);
         }
 
         PlayerSpawner.Instance.StartRespawnCountdown();
-        PhotonNetwork.Destroy(gameObject);
+
+        StartCoroutine(DestroyAfterDelay());
     }
 
-    // ✅ Fix: Properly place the OnPhotonSerializeView method inside the class
+    private IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(0.5f); 
+        if (photonView.IsMine)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
+    }
+
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)

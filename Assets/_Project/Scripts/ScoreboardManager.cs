@@ -53,7 +53,17 @@ public class ScoreManager : MonoBehaviourPunCallbacks
 
             if (countdownText != null)
             {
-                countdownText.text = $"Time Left: {Mathf.Ceil(currentTime)}s";
+                int minutes = Mathf.FloorToInt(currentTime / 60);
+                int seconds = Mathf.FloorToInt(currentTime % 60);
+
+                if (minutes > 0)
+                {
+                    countdownText.text = $"Time Left: {minutes}:{seconds:D2}";
+                }
+                else
+                {
+                    countdownText.text = $"Time Left: {seconds}s"; 
+                }
             }
 
             if (currentTime <= 0)
@@ -62,6 +72,7 @@ public class ScoreManager : MonoBehaviourPunCallbacks
             }
         }
     }
+
 
     private void InitializeScores()
     {

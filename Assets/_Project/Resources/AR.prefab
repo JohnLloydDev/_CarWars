@@ -147,7 +147,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!135 &1502114034285624866
@@ -187,7 +187,7 @@ MonoBehaviour:
   Hit: {fileID: 162584487599433031, guid: 39f852c28f9c3fd45a427c24f3564ba7, type: 3}
   Fire: {fileID: 162584487599433031, guid: 39f852c28f9c3fd45a427c24f3564ba7, type: 3}
   damage: 15
-  range: 70
+  range: 50
 --- !u!114 &8473696718695801087
 MonoBehaviour:
   m_ObjectHideFlags: 0

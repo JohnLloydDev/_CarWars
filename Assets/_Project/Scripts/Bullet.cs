@@ -19,11 +19,11 @@ public class Bullet : MonoBehaviourPun
 
         if (carRb != null)
         {
-            rb.linearVelocity = (transform.forward * 50f) + carRb.linearVelocity;
+            rb.linearVelocity = (transform.forward * 300f) + carRb.linearVelocity;
         }
         else
         {
-            rb.linearVelocity = transform.forward * 50f;
+            rb.linearVelocity = transform.forward * 300f;
         }
 
         GameObject fireEffect = Instantiate(Fire, transform.position, Quaternion.identity);

@@ -1819,9 +1819,12 @@ MonoBehaviour:
   maxAmmo: 5
   reloadTime: 3
   ammoIcon: {fileID: 0}
+  crosshairTexture: {fileID: 2800000, guid: 11e5ab06858788e4283a67ae91eca8b5, type: 3}
   customFont: {fileID: 0}
   autoFire: 1
   fireRate: 1.5
+  fireSound: {fileID: 8300000, guid: 1c70a865ec8b17d4fa26c76eb6f17c4c, type: 3}
+  reloadSound: {fileID: 8300000, guid: 4fa2aa5edbbdb1f4885ff9fcd341bbaf, type: 3}
 --- !u!114 &1823798210517170118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,6 +1838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  deathParticlesPrefab: {fileID: 417761080263594737, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4, type: 3}
 --- !u!1 &3658861202175501155
 GameObject:
   m_ObjectHideFlags: 0
