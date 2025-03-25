@@ -437,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -546, y: 5}
+  m_AnchoredPosition: {x: -2, y: -118}
   m_SizeDelta: {x: 171.4, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &631751551
@@ -1057,7 +1057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5267778}
-  m_AnchoredPosition: {x: -546, y: -136}
+  m_AnchoredPosition: {x: -2, y: -259}
   m_SizeDelta: {x: 168.5, y: 24.099998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535081990
@@ -1113,7 +1113,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: How To Play
+          m_StringArgument: Game Guide
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1535081991
@@ -1443,7 +1443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1809661437
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1483,10 +1483,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BLOb WARS
+  m_text: Gear Brawl
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4df4d15390c5d4144bbe1bb6c773c746, type: 2}
-  m_sharedMaterial: {fileID: 768265242488290947, guid: 4df4d15390c5d4144bbe1bb6c773c746, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 36f25a3fc25f62d459827781e894760c, type: 2}
+  m_sharedMaterial: {fileID: -9020296928166068169, guid: 36f25a3fc25f62d459827781e894760c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1598,7 +1598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -546, y: -244}
+  m_AnchoredPosition: {x: -2, y: -367}
   m_SizeDelta: {x: 171.4, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1837690910

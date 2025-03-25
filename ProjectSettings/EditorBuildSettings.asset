@@ -41,5 +41,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Neon_Map_22.unity
     guid: a8de8e32dc1d139448a90655e2e46b10
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game Guide.unity
+    guid: a37bf6b863bfaef40ac3afe19970b78d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
