@@ -4502,7 +4502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621300939}
   - component: {fileID: 621300941}
-  - component: {fileID: 621300940}
+  - component: {fileID: 621300942}
   m_Layer: 5
   m_Name: Scoreboard
   m_TagString: Untagged
@@ -4529,7 +4529,23 @@ RectTransform:
   m_AnchoredPosition: {x: 205, y: 797}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &621300940
+--- !u!114 &621300941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621300938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7366f778d64baa348bbfce5a9b610278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1293565402}
+  resultText: {fileID: 1353211376}
+  countdownText: {fileID: 113044897}
+  countdownTime: 180
+--- !u!114 &621300942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4551,22 +4567,6 @@ MonoBehaviour:
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &621300941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621300938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7366f778d64baa348bbfce5a9b610278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1293565402}
-  resultText: {fileID: 1353211376}
-  countdownText: {fileID: 113044897}
-  countdownTime: 180
 --- !u!1 &628336953
 GameObject:
   m_ObjectHideFlags: 0
